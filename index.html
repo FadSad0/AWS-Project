@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image to S3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="hero is-info is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">
+                    Upload Image to S3
+                </h1>
+                <div class="box">
+                    <form id="upload-form">
+                        <div class="file is-primary has-name is-boxed">
+                            <label class="file-label">
+                                <input class="file-input" type="file" id="file-input" accept="image/*" required>
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">
+                                        Choose an image…
+                                    </span>
+                                </span>
+                                <span class="file-name" id="file-name">
+                                    No file selected
+                                </span>
+                            </label>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary" type="submit">
+                                    Upload
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="notification is-success" id="result"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="modal" id="loading-modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box has-text-centered">
+                <progress class="progress is-primary" max="100"></progress>
+                <p>Uploading...</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>
